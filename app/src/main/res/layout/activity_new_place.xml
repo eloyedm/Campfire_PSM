@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewPLace">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#e43f3f"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="29dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e43f3f"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingTop="34dp"
+            android:paddingRight="24dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="270dp"
+                android:layout_height="206dp"
+                android:layout_marginBottom="20dp"
+                tools:layout_editor_absoluteX="27dp"
+                tools:layout_editor_absoluteY="16dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:inputType="textCapWords"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:helperText="Introduce una descripción">
+
+                <EditText
+                    android:id="@+id/input_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Descripción"
+                    android:inputType="textMultiLine"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:columnCount="4"
+                app:columnOrderPreserved="true">
+
+                <Switch
+                    android:id="@+id/switch26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="fill"
+                    android:text="Switch"
+                    android:textSize="22dp" />
+
+                <Switch
+                    android:id="@+id/switch25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="fill"
+                    android:text="Switch"
+                    android:textSize="22dp" />
+
+                <Switch
+                    android:id="@+id/switch23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="fill"
+                    android:text="Switch"
+                    android:textSize="22dp" />
+
+                <Switch
+                    android:id="@+id/switch22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="fill"
+                    android:text="Switch"
+                    android:textSize="22dp" />
+            </android.support.v7.widget.GridLayout>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:text="Crear" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
