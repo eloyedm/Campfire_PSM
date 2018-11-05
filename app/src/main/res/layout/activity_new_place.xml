@@ -70,15 +70,15 @@
             <android.support.v7.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:columnCount="4"
+                app:columnCount="3"
                 app:columnOrderPreserved="true">
 
                 <Switch
                     android:id="@+id/switch26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:gravity="fill"
                     android:text="Switch"
                     android:textSize="22dp" />
@@ -87,8 +87,8 @@
                     android:id="@+id/switch25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:gravity="fill"
                     android:text="Switch"
                     android:textSize="22dp" />
@@ -97,8 +97,8 @@
                     android:id="@+id/switch23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:gravity="fill"
                     android:text="Switch"
                     android:textSize="22dp" />
@@ -107,15 +107,15 @@
                     android:id="@+id/switch22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:gravity="fill"
                     android:text="Switch"
                     android:textSize="22dp" />
             </android.support.v7.widget.GridLayout>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/newPlaceConfirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"

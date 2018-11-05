@@ -89,7 +89,7 @@ public class Login extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 }, 3000);
-        Intent intentStart = new Intent(getApplicationContext(), NewPLace.class);
+        Intent intentStart = new Intent(getApplicationContext(), Map.class);
         startActivity(intentStart);
     }
 
