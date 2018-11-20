@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Listing">
+    <item
+        android:id="@+id/mapItem"
+        android:orderInCategory="300"
+        android:title="Mapa"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mysites"
+        android:orderInCategory="200"
+        android:title="Mis Sitios"
+        app:showAsAction="ifRoom"/>
+</menu>
