@@ -1,6 +1,9 @@
 package com.example.android.campfire;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import net.alexandroid.utils.toaster.Toaster;
 
 
 public class Login extends AppCompatActivity {
@@ -56,7 +61,9 @@ public class Login extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
-
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String lanSettings = prefs.getString("email_saved", null);
+        e_email.setText(lanSettings);
     }
 
     public void login() {
@@ -114,12 +121,16 @@ public class Login extends AppCompatActivity {
 
     public void onLoginSuccess() {
         b_loginBtn.setEnabled(true);
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("email_saved", e_email.getText().toString());
+        editor.apply();
         finish();
     }
 
     public void onLoginFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-
+        //Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+        Toaster.showToast(this,"login failed" ,300, 500);
         b_loginBtn.setEnabled(true);
     }
 

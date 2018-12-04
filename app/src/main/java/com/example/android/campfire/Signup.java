@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import net.alexandroid.utils.toaster.Toaster;
+
+import java.util.List;
+
 
 public class Signup extends AppCompatActivity {
 
@@ -78,8 +82,24 @@ public class Signup extends AppCompatActivity {
         String password = e_password.getText().toString();
 
         // TODO: Implement your own signup logic here.
-
-        new android.os.Handler().postDelayed(
+        new Networking(this).execute("signup", name, email, password, new NetCallback() {
+            @Override
+            public void onWorkFinish(Object data) {
+                final int signupCode = (int) data;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(signupCode == 200){
+                            onSignupSuccess();
+                        }
+                        else{
+                            onSignupFailed();
+                        }
+                    }
+                });
+            }
+        });
+        /*new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
                         // On complete call either onSignupSuccess or onSignupFailed
@@ -88,7 +108,7 @@ public class Signup extends AppCompatActivity {
                         // onSignupFailed();
                         progressDialog.dismiss();
                     }
-                }, 3000);
+                }, 3000);*/
     }
 
 
@@ -99,8 +119,10 @@ public class Signup extends AppCompatActivity {
     }
 
     public void onSignupFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+       // Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
+        Toaster.showToast(this, "Signup failed");
+//        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         b_signupBtn.setEnabled(true);
     }
 

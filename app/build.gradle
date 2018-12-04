@@ -26,6 +26,11 @@ android {
             path "CMakeLists.txt"
         }
     }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java/com.rexample.android.campfire/Model']
+        }
+    }
 }
 
 dependencies {
@@ -41,4 +46,5 @@ dependencies {
     implementation 'com.google.android:flexbox:1.1.0'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'net.alexandroid.utils:toaster:2.0.3'
 }

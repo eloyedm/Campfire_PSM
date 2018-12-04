@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import net.alexandroid.utils.toaster.Toaster;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,15 +24,29 @@ public class SitesList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        places = new ArrayList<>();
         setContentView(R.layout.activity_sites_list);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         rv = findViewById(R.id.rv);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
-        initializeData();
+        new Networking(this).execute("getPlaces", new NetCallback() {
+            @Override
+            public void onWorkFinish(Object data) {
+                places = (List<Place>) data;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        RVAdapter rvAdapter = new RVAdapter(places);
+                        rv.setAdapter(rvAdapter);
+                    }
+                });
+            }
+        });
+        /*initializeData();
         RVAdapter rvAdapter = new RVAdapter(places);
-        rv.setAdapter(rvAdapter);
+        rv.setAdapter(rvAdapter);*/
     }
 
     @Override
@@ -87,6 +103,7 @@ public class SitesList extends AppCompatActivity {
     }
 
     private void showToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Toaster.showToast(this, msg);
+//        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }
